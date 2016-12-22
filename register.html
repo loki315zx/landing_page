@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="zh-cn"><head>
+    <meta http-equiv="Content-Type" content="text/html">
+    <meta name="author" content="">
+    <meta charset="utf-8">
+    <title>开户港美股，福利享不停</title>
+    <meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no">
+   	<meta name="viewport" content="width=device-width, initial-scale=1.0,maximum-scale=1.0, user-scalable=no,minimal-ui">
+    <meta name="format-detection" content="telephone=no">
+    <meta name="format-detection" content="email=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <link rel="stylesheet" type="text/css" href="../css/style.css">
+    <script type="text/javascript" src="http://m.aicaicdn.com/wap5/js/public/flexible.750.js"></script>
+</head>
+<body class="reg_bg">
+<!-- /header -->
+<header class="logo_l">华盛证券</header>
+
+<section class="form_wrap">
+    <!-- 验证码未填写或者不正确,密码不正确 添加类err-->
+    <input class="input_long err" type="number" name="" value="" placeholder="请输入手机号">
+    <div class="input_wrap">
+        <input class="input_short err" type="text" name="" value="" placeholder="请输入验证码">
+        <a class="btn_yzm" href="javascript:;">获取验证码</a>
+    </div>
+    <input class="input_long input_password err" type="password" name="" value="" placeholder="请设置密码">
+    <p class="tips">6-24位包含数字英文或字符的</p>
+</section>
+
+<a href="success.html" class="btn_register">立即注册</a>
+<a href="javascript:;" class="btn_account">已有账号</a>
+
+
+<!-- 新增的提示弹出层部分 -->
+<div class="modal_wrap">
+    <div class="modal_main">
+        <h1 class="modal_title">提示</h1>
+        <p class="p_content">当前手机号码已被注册</p>
+        <div class="modal_footer">
+            <a href="javascript:;" class="btn_cancel">取消</a>
+            <a href="javascript:;" class="btn_login">立即登录</a>
+        </div>
+    </div>
+    <i class="mask"></i>
+</div>
+<!-- 新增的提示部分 -->
+<div class="warning">
+    <p>请输入您的手机号！</p>
+<!--
+    <p>手机号长度不对！</p>
+    <p>密码格式不对！</p>
+    <p>验证码错误！</p>
+-->
+</div>
+
+<script type="text/javascript" src="../js/zepto.min.js"></script>
+<script type="text/javascript">
+$(function(){
+
+    var btnReg = $(".btn_register");
+    var btnCan = $(".btn_cancel");
+    var oMask = $(".mask");
+    var oWrap = $(".modal_wrap");
+    var btnLog = $(".btn_login");
+
+    btnReg.click(function(){
+        oWrap.show();
+    })
+    btnCan.click(function(){
+        oWrap.hide();
+        delayHide();
+    })
+    oMask.click(function(){
+        oWrap.hide();
+    })
+    btnLog.click(function(){
+        //点击登录按钮，跳转到应用宝该app
+        alert("跳转到该应用app的应用宝页面!");
+
+    })
+
+    //fn: 3秒之后提示消失
+    function delayHide(){
+        setTimeout("$('.warning').hide();",3000);
+    }
+
+});
+</script>
+</body>
+</html>
